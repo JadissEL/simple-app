@@ -1,14 +1,14 @@
-FROM node:14
+FROM node:14 as builder
 
 WORKDIR /app
 COPY ./package*.json ./
 RUN npm install
 COPY ./ ./
-
 RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev
 RUN npm install sqlite3 --build-from-source
-RUN npm install --force
 
-
+FROM node:14-slim
+WORKDIR /app
+COPY --from=builder /app .
 EXPOSE 3001
 CMD ["npm", "start"]
