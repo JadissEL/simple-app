@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Simple Name App</h1>
+      <h1>Simple Name App with Backend and Frontend </h1>
       <input
         type="text"
         value={name}
