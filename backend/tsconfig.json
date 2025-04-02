@@ -22,7 +22,10 @@
     "allowJs": true,
     "checkJs": true,
     "noEmitOnError": true,
-    "incremental": true
+    "incremental": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   },
   "include": ["**/*.ts", "**/*.js"],
   "exclude": ["node_modules", "dist"]
